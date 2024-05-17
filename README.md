@@ -1,6 +1,6 @@
 # Games 
 
-Para la instalacion debes entrar individualmente mediante tu terminal a las carpetas client y server. Tienes que tener instalado [Node JS](https://nodejs.org/en/download/prebuilt-installer). Además de haber clonado el repositorio este respositorio.
+Para la instalacion debes entrar individualmente mediante tu terminal a las carpetas client y server. Tienes que tener instalado [Node JS](https://nodejs.org/en/download/prebuilt-installer). Además de haber clonado el repositorio.
 
 ### Server
 1. Entras a la carpeta server.
