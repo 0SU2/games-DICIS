@@ -7,7 +7,8 @@
                 <v-btn
                     class="mx-2"
                     @click="goto_personajes()"
-                >Personajes</v-btn>
+                >Personajes
+                </v-btn>
                 <v-btn
                     class="mx-4"
                     @click="goto_inicio()"
@@ -163,7 +164,7 @@
                     @click="goto_main()"
                     class="mx-5"
                 >
-                    Return to Login
+                    Cerrar sesion
                 </v-btn>  
                 <v-btn
                     @click="ready_to_play = true"

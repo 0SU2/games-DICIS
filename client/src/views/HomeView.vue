@@ -50,7 +50,7 @@
                     @click="goto_main()"
                     class="mx-5"
                 >
-                    Return to Login
+                    Cerrar sesion
                 </v-btn>  
                 <v-btn
                     @click="ready_to_play = true"
