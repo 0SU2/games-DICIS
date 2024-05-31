@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/usuarios', require('./routes/usuarios.js'));
 app.use('/personajes', require('./routes/personajes.js'));
-// app.use('/accesorios', require('./routes/accesorios.js').default);
+app.use('/accesorios', require('./routes/accesorios.js'));
 app.use('/armas', require('./routes/armas.js'));
 app.use('/asignaciones', require('./routes/asignaciones.js'));
 app.use('/arsenal', require('./routes/arsenal.js'));
@@ -25,8 +25,8 @@ app.use('/billetera', require('./routes/billetera.js'));
 
 
 // puerto donde estara escuchando la API para usarse en nuestro framework
-app.listen( 2023, () => {
-        console.log('API ejecutada con exito');
+app.listen( 3000, () => {
+        console.log('API ejecutada con exito en el puerto 3000');
     }
 );
 
