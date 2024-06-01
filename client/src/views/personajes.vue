@@ -288,7 +288,6 @@ import router from '@/router';
                 //Muesra la lista de personajes para la asignacion del usuario (agregar personaje)
                 async llenar_personajesAsg(){
                     const api_data = await this.axios.get('/personajes/todos_los_personajes');
-
                     api_data.data.forEach((item) => {
                         this.personajes_agregar.push({
                             text: item.per_name,

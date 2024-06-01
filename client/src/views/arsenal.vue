@@ -115,7 +115,6 @@
                     <v-card-text>
                         Personaje con el que quieres jugar: 
                         <v-autocomplete
-                            :items="personajes_usuario"
                             label="Selecciona"
                             v-model="personaje_que_juega"
                         >

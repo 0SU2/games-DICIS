@@ -5,7 +5,7 @@ const connection = mysql.createPool({
     // cambiar el nombre de tu nombre del host que usas
     host: 'localhost',
     user: 'root',
-    password: '1234',
+    password: 'root',
     database: 'games_db'
 })
 
