@@ -23,6 +23,9 @@
                                 v-model="usuario.usu_username"
                                 outlined
                                 label="Username"
+                                :error-messages="ErrorSC"
+                                @keydown.enter="log_in()"
+                                @keydown="restrictSpecialCharacters"
                             >
                             </v-text-field>
                         </v-col>
@@ -38,6 +41,9 @@
                                 hint="At least more than 8 characters"
                                 class="input-group--focused"
                                 @click:append="show3 = !show3"
+                                :error-messages="ErrorSC"
+                                @keydown.enter="log_in()"
+                                @keydown="restrictSpecialCharacters"
                             ></v-text-field>
                         </v-col>
                     </v-row>
@@ -102,7 +108,7 @@ import router from '@/router';
                 usu_username: '',
                 usu_password: '',
             },
-
+            ErrorSC: '',
             show3: false,
             no_existe: false,
             si_existe: false,
@@ -147,6 +153,16 @@ import router from '@/router';
                 return;
             }
             this.show3 = false;
+        },
+        restrictSpecialCharacters (event) {
+            // expresion regular que restringe caracteres especiales excepto la ñ
+            const regex = /[^A-Za-z0-9ñÑ@._]/g
+            if (regex.test(event.key)) {
+                event.preventDefault()
+                this.ErrorSC = 'No se permiten los caracteres especiales'
+            } else {
+                this.ErrorSC = ''
+            }
         }
     },
     components: { router },
