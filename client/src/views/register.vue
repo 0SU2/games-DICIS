@@ -16,12 +16,18 @@
                         :rules="[() => !!nuevo_usuario.usu_username || 'This field is required']"
                         label="Usuario"
                         required
+                        :error-messages="ErrorSC"
+                        @keydown.enter="log_in()"
+                        @keydown="restrictSpecialCharacters"
                         ></v-text-field>
                         <v-text-field
                         v-model="nuevo_usuario.usu_email"
                         :rules="[() => !!nuevo_usuario.usu_email || 'This field is required']"
                         label="Correo"
                         required
+                        :error-messages="ErrorSC"
+                        @keydown.enter="log_in()"
+                        @keydown="restrictSpecialCharacters"
                     ></v-text-field>
                     <v-text-field
                         v-model="nuevo_usuario.usu_password"
@@ -32,6 +38,9 @@
                         hint="At least more than 8 characters"
                         required
                         @click:append="show_password()"
+                        :error-messages="ErrorSC"
+                        @keydown.enter="log_in()"
+                        @keydown="restrictSpecialCharacters"
                     ></v-text-field>
                     <v-menu
                         v-model="menu2"
@@ -144,6 +153,7 @@ import router from '@/router';
                     usu_birthday: '',
                     usu_region: ''
                 },
+                ErrorSC: '',
                 show3: false,
                 menu2: false,
                 no_existe: false
@@ -176,7 +186,16 @@ import router from '@/router';
                 }
                 this.show3 = false;
             },
-
+            restrictSpecialCharacters (event) {
+                // expresion regular que restringe caracteres especiales excepto la ñ
+                const regex = /[^A-Za-z0-9ñÑ@._]/g
+                if (regex.test(event.key)) {
+                    event.preventDefault()
+                    this.ErrorSC = 'No se permiten los caracteres especiales'
+                } else {
+                    this.ErrorSC = ''
+                }
+            }
         }
     }
 </script>
