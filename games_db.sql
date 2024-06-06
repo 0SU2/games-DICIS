@@ -1,12 +1,6 @@
-# Created by: Alvarez Vazquez Luis Angel 
-# Castillo Quintanilla Marco Antonio
-# Cobian Ayala Mario Geovani
-# Rosas Zavalas Oscar Ricardo 
-# Date: 12-06-2023
-# Definition: crear un sistema para controlar la información de un videojuego en 
-# el cual hay usuarios que pueden seleccionar varios personajes, para los cuales pueden 
-# comprar armas/accesorios para usar durante el juego
-
+# Sistemas de Informacion
+# Proyecto Final Dicis Games
+# 06-Junio-2024
 
 # -- Creacion de Base de Datos --- #
 CREATE DATABASE IF NOT EXISTS games_db;
